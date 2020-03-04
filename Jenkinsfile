@@ -1,7 +1,7 @@
 pipeline {
     environment {
     registry = "ikbel2019/ikbelwebapp"
-    registryCredential = ‘mydockerhub’
+    registryCredential = 'mydockerhub'
   }
     agent any
     stages{
