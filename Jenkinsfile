@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Build image') {
     steps {
-    app = docker.build registry + ":$BUILD_NUMBER"
+    docker.build registry + ":$BUILD_NUMBER"
     }
     }
     stage('Tag image') {
