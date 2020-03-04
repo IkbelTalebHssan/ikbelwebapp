@@ -11,13 +11,19 @@ pipeline {
     }
     }
     stage('Build image') {
+    steps {
     app = docker.build registry + ":$BUILD_NUMBER"
     }
+    }
     stage('Tag image') {
+    steps {
     sh 'docker tag ikbelwebapp ikbel2019/ikbelwebapp:latest'
     }
+    }
     stage('Push container') {
+    steps {
     sh 'docker push ikbel2019/ikbelwebapp'
+    }
     }
     }
     
