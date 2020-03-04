@@ -6,7 +6,9 @@ pipeline {
     agent any
     stages{
     stage('Clone') {
+    steps {
     checkout scm
+    }
     }
     stage('Build image') {
     app = docker.build registry + ":$BUILD_NUMBER"
