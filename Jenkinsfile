@@ -6,13 +6,13 @@ node {
     app = docker.build("ikbelwebapp")
     }
     stage('Login docker') {
-    docker.login('-u ikbel2019 -p yaAllah19')
+    sh 'docker login -u ikbel2019 -p yaAllah19'
     }
     stage('Tag image') {
-    docker.tag('ikbelwebapp ikbel2019/ikbelwebapp:latest')
+    sh 'docker tag ikbelwebapp ikbel2019/ikbelwebapp:latest'
     }
     stage('Push container') {
-    docker.push("ikbel2019/ikbelwebapp")
+    sh 'docker push ikbel2019/ikbelwebapp'
     }
     
     
