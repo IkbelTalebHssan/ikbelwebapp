@@ -7,7 +7,7 @@ node {
     }
     stage('Test image') {
     docker.image('ikbelwebapp').withRun('-p 5000:80') { c -> sh 'docker ps'
-                                                           sh 'curl localhost:5000'}
+                                                           sh 'curl localhost'}
     }
     stage('Login docker') {
     docker.login('-u ikbel2019 -p yaAllah19')
